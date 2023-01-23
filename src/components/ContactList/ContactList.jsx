@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
 import { ContactGroup, Item } from '../ContactList/ContactList.styled';
 import { useSelector } from "react-redux";
+import { selectFilteredContacts } from "components/redux/selector";
 
 
 export const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts.contacts);
+  const contacts = useSelector(selectFilteredContacts);
   
   return (
     <ContactGroup >
